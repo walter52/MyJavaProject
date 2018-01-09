@@ -2,17 +2,15 @@ package com.walter.run;
 
 
 
+import com.walter.obserModel.CurrentConditionsDisplay;
+import com.walter.obserModel.WeatherData;
+
 public class MainRun {
 
-  public static void main(String[] args) {
-    // TODO Auto-generated method stub
-
-    // AboutCharset ac = new AboutCharset("UTF-8");
-    // ac.showCharset();// 查看字符集别名
-    // ac.enCodeString("wuso");
-    // System.out.println(new String(ac.enCodeString("wuso")));
-
-
-
-  }
+    public static void main(String[] args) {
+        CurrentConditionsDisplay currentConditionsDisplay = new CurrentConditionsDisplay();
+        WeatherData weatherData = new WeatherData();
+        weatherData.registerObserver(currentConditionsDisplay);
+        weatherData.setMeasurements("23","100","45");
+    }
 }
