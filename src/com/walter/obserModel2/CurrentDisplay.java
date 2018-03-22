@@ -8,11 +8,9 @@ import java.util.Observer;
  * Created by walter on 2018/3/20.
  */
 public class CurrentDisplay implements Observer{
-
     private Observable observable;
-    private float temperature;
-    private float humidity;
-    private float pressure;
+    private String temperture;
+    private String pressure;
 
     public CurrentDisplay(Observable observable){
         this.observable = observable;
@@ -23,14 +21,9 @@ public class CurrentDisplay implements Observer{
     public void update(Observable o, Object arg) {
         if(o instanceof WeatherData){
             WeatherData weatherData = (WeatherData)o;
-            this.temperature = weatherData.getTemperature();
-            this.humidity = weatherData.getHumidity();
-            this.pressure = weatherData.getPresssure();
-            display();
+            temperture = weatherData.getTemperture();
+            pressure = weatherData.getPressure();
+            System.out.println("temperture"+temperture+",pressure"+pressure);
         }
-    }
-
-    public void display(){
-        System.out.println("temperature:"+temperature+",humidity:"+humidity+",pressure:"+pressure);
     }
 }

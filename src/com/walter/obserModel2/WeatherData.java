@@ -7,44 +7,29 @@ import java.util.Observable;
  * Created by walter on 2018/3/20.
  */
 public class WeatherData extends Observable{
-    private float temperature;
-    private float humidity;
-    private float presssure;
+    private String temperture;
+    private String pressure;
 
-    public WeatherData(){
+    public void updateInfo(String temperture,String pressure){
+        this.temperture = temperture;
+        this.pressure = pressure;
+        setChanged();
+        notifyObservers();
     }
 
-    public void updateData(float temperature,float humidity,float presssure){
-        this.temperature = temperature;
-        this.presssure = presssure;
-        this.humidity = humidity;
-
-        this.setChanged();
-        this.notifyObservers();
+    public String getTemperture() {
+        return temperture;
     }
 
-
-    public float getTemperature() {
-        return temperature;
+    public void setTemperture(String temperture) {
+        this.temperture = temperture;
     }
 
-    public void setTemperature(float temperature) {
-        this.temperature = temperature;
+    public String getPressure() {
+        return pressure;
     }
 
-    public float getHumidity() {
-        return humidity;
-    }
-
-    public void setHumidity(float humidity) {
-        this.humidity = humidity;
-    }
-
-    public float getPresssure() {
-        return presssure;
-    }
-
-    public void setPresssure(float presssure) {
-        this.presssure = presssure;
+    public void setPressure(String pressure) {
+        this.pressure = pressure;
     }
 }
