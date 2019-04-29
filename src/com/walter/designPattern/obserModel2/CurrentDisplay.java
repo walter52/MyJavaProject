@@ -1,4 +1,4 @@
-package com.walter.obserModel2;
+package com.walter.designPattern.obserModel2;
 
 
 import java.util.Observable;

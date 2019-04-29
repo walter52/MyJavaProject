@@ -1,9 +1,5 @@
-package com.walter.obserModel;
+package com.walter.designPattern.obserModel;
 
-
-
-import com.walter.obserModel.CurrentConditionsDisplay;
-import com.walter.obserModel.WeatherData;
 
 public class MainRun {
 

@@ -1,4 +1,4 @@
-package com.walter.obserModel;
+package com.walter.designPattern.obserModel;
 
 import java.util.ArrayList;
 import java.util.List;
