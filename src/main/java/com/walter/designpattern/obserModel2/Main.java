@@ -1,4 +1,4 @@
-package com.walter.designPattern.obserModel2;
+package com.walter.designpattern.obserModel2;
 
 /**
  * Created by walter on 2018/3/20.

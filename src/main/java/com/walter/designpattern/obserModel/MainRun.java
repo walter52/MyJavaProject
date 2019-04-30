@@ -1,4 +1,4 @@
-package com.walter.designPattern.obserModel;
+package com.walter.designpattern.obserModel;
 
 
 public class MainRun {
