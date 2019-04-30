@@ -1,5 +1,6 @@
 package com;
 
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -7,11 +8,11 @@ import org.slf4j.LoggerFactory;
  * @author super
  * @date 2019/4/30
  */
+@Slf4j
 public class BaseTest {
-  protected static final Logger LOG = LoggerFactory.getLogger(BaseTest.class);
 
   public BaseTest(){
-    LOG.info("-------test start------");
+    log.info("-------test start------");
   }
 
 }
