@@ -12,7 +12,6 @@ public class Main {
       threadPoolManager.execute(() ->
           System.out.println(Thread.currentThread().getName()));
     }
-    int a=0;
   }
 
 }
