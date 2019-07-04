@@ -33,6 +33,13 @@
       <version>1.2.3</version>
     </dependency>
 
+    <!-- joor-->
+    <dependency>
+      <groupId>org.jooq</groupId>
+      <artifactId>joor-java-8</artifactId>
+      <version>0.9.7</version>
+    </dependency>
+
 
     <!-- 单元测试 -->
     <dependency>
