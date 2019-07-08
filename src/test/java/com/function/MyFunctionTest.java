@@ -65,6 +65,17 @@ public class MyFunctionTest extends BaseTest {
     List<People> peoples = Arrays
         .asList(new People("waler", "12"), new People("jack", "10"), new People("sun", "18"));
     log.info(peoples.toString());
+
+    //常规
+//    peoples.sort(new Comparator<People>() {
+////      @Override
+////      public int compare(People o1, People o2) {
+////          return o1.getAge().compareTo(o2.getAge());
+////      }
+////    });
+    //lambda
+//    peoples.sort((o1,o2)-> o1.getAge().compareTo(o2.getAge()));
+    //方法推导
     peoples.sort(Comparator.comparing(People::getAge));
     log.info(peoples.toString());
 
