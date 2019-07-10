@@ -9,12 +9,23 @@ import java.util.function.Function;
  */
 public class MyFunction {
 
-  public static String compute(int a, Function<Integer,String> function){
+  /**
+   * 普通
+   */
+  public static String compute(int a, Function<Integer, String> function) {
     return function.apply(a);
   }
 
-  public static String compute(int a,int b, BiFunction<Integer,Integer,String> biFunction){
-    return biFunction.apply(a,b);
+  public static String compute(int a, int b, BiFunction<Integer, Integer, String> biFunction) {
+    return biFunction.apply(a, b);
+  }
+
+  /**
+   * compose
+   */
+  public static Integer composeCompute(int a, Function<Integer, Integer> function1,
+      Function<Integer, Integer> function2) {
+    return function1.compose(function2).apply(a);
   }
 
 }

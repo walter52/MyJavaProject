@@ -21,6 +21,7 @@ import org.slf4j.Logger;
 @Slf4j
 public class MyFunctionTest extends BaseTest {
 
+  /** 普通*/
   @Test
   public void computeTest() {
     log.info(MyFunction.compute(2, var -> String.valueOf(var * 2)));
@@ -29,6 +30,13 @@ public class MyFunctionTest extends BaseTest {
   @Test
   public void computeBiTest() {
     log.info(MyFunction.compute(2, 3, (a, b) -> String.valueOf(a + b)));
+  }
+
+  /** compose*/
+  @Test
+  public void composeTest(){
+    log.info(Function.identity().apply(2).toString());
+    log.info(MyFunction.composeCompute(2,var->var*3,var->var+2).toString());
   }
 
   /**
@@ -55,11 +63,15 @@ public class MyFunctionTest extends BaseTest {
 
     //lambda
     BiFunction<String, Integer, Character> biFunction1 = (a, b) -> a.charAt(b);
+    Function<String,String> function1 = a->a.toUpperCase();
     log.info("" + biFunction1.apply(var, 1));
+    log.info("" + function1.apply(var));
 
     //推导
     BiFunction<String, Integer, Character> biFunction2 = String::charAt;
+    Function<String,String> function2 = String::toUpperCase;
     log.info("" + biFunction2.apply(var, 1));
+    log.info("" + function2.apply(var));
 
     //运用实例
     List<People> peoples = Arrays
@@ -78,7 +90,6 @@ public class MyFunctionTest extends BaseTest {
     //方法推导
     peoples.sort(Comparator.comparing(People::getAge));
     log.info(peoples.toString());
-
   }
 
   /**
